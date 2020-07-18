@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Report</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="/js/setup.js"></script>
+</head>
+<style>
+  .carousel-control-next-iconn:after
+{
+  content: '>';
+  font-size: 30px;
+  color: #4e73df;
+}
+
+.carousel-control-prev-iconn:after {
+  content: '<';
+  font-size: 30px;
+  color: #4e73df;
+}
+</style>
+<body id="page-top">
+    
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon">
+          <img data-altlogo="https://www.n3xtsports.com/wp-content/uploads/2018/05/logo-colored-2.png" src="https://www.n3xtsports.com/wp-content/uploads/2018/05/logo-white-2.png" class="img-fluid w-75" alt="N3XT SPORTS">
+        </div>
+        <div class="sidebar-brand-text mx-3"></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="/admin">
+          <i class="fa fa-home"></i>
+          <span>Home</span></a>
+      </li>
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fa fa-list-ol"></i>
+          <span>Questionnaire</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Categories:</h6>
+            <a class="collapse-item" href="buttons.html">Business Strategy</a>
+            <a class="collapse-item" href="cards.html">Internal Digitalization</a>
+            <a class="collapse-item" href="cards.html">Digital Products</a>
+            <a class="collapse-item" href="cards.html">Data Management</a>
+            <a class="collapse-item" href="cards.html">Content Production</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#">
+          <i class="fa fa-trophy"></i>
+          <span>Leaderboards</span>
+        </a>
+      </li>
+      
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="/table">
+          <i class="fa fa-users"></i>
+          <span>Clients</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+        <h1 class="display-4 text-center">
+            Client Results
+        </h1>
+      <!-- Main Content -->
+      <div id="content">
+
+        
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          
+
+          <!-- Content Row -->
+          <div class="row mt-2">
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Name</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientName"></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-user fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Company</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientCompany"></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-building fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earnings (Monthly) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Title</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientTitle"></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-briefcase fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Submission</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientDate"></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+
+            <!-- Area Chart -->
+            <div class="col-xl-6 col-md-12">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Score</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-area text-center">
+                    <canvas id="myGauge" class="w-75"></canvas><br><br>
+                    <span style="font-size:25px;" class=" px-2 py-2">
+                      <span id="ClientTotal">Develop: 45 </span><span style="font-weight: ; color: grey"> / 100</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="col-xl-6 col-md-12">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold text-primary">Result Details</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="chart-pie pt-4 pb-2 mb-3">
+                    <canvas id="myPieChart"></canvas>
+                  </div>
+                  <br>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card shadow mb-4">
+            <div class="card-body">
+              <div id="accordion">
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="text-center">
+                      <a href="#collapse2" data-parent="#accordion" data-toggle="collapse">
+                        Business Strategy <i class="fas fa-caret-down"></i>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapse2" class="collapse">
+                    <div class="card-body">
+                      <div id="slider2" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            Does your organisation have a written business plan/strategy? <span id="1"></span>
+                          </div>
+                          <div class="carousel-item">
+                            How big (i.e.: in FTEs) is the business/corporate structure at the Organisation (Marketing, Sponsorship, Digital, Communications...)? <span id="2"></span>
+                          </div>
+                          <div class="carousel-item">
+                            There are a few (+3) people working on digital operations (Social Media, Web, Analytics, CRM etc...)? <span id="3"></span>
+                          </div>
+                        </div>
+                        <a href="#slider2" style="text-decoration: none;" data-slide="prev">
+                          <span class="carousel-control-prev-iconn"></span>
+                        </a>
+                        <a href="#slider2" style="text-decoration: none; float: right" data-slide="next">
+                          <span class="carousel-control-next-iconn"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="text-center">
+                      <a href="#collapse3" data-parent="#accordion" data-toggle="collapse">
+                        Internal Digitalization <i class="fas fa-caret-down"></i>
+                      </a>
+                    </h5>
+                  </div>
+
+                  <div id="collapse3" class="collapse">
+                    <div class="card-body">
+                      <div id="slider3" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             Is there a 3-5 year IT strategy documented? <span id="4"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Do employees regularly use Project Management software (e.g.: Asana, Trello, Atlassian, Wetrack etc.) to manage their workloads? <span id="5"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Do employees use corporate chat (e.g.: Slack, Microsoft Teams, etc.) as a standard communication platform? <span id="6"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Does the organisation have access at anytime, anywhere to documentation without any connectivity issue? <span id="7"></span>
+                          </div>
+                        </div>
+                        <a href="#slider3" style="text-decoration: none;" data-slide="prev">
+                          <span class="carousel-control-prev-iconn"></span>
+                        </a>
+                        <a href="#slider3" style="text-decoration: none; float: right" data-slide="next">
+                          <span class="carousel-control-next-iconn"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="text-center">
+                      <a href="#collapse4" data-parent="#accordion" data-toggle="collapse">
+                        Digital Products <i class="fas fa-caret-down"></i>
+                      </a>
+                    </h5>
+                  </div>
+
+                  <div id="collapse4" class="collapse">
+                    <div class="card-body">
+                      <div id="slider4" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             Do you have a 100% mobile responsive website?<span id="8"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Do you use analytics on your website? Such as Google Analytics. <span id="9"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Is your website development managed by an external agency? <span id="10"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Do you have an app? <span id="11"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Do you collect analytics from app downloads & usage? <span id="12"></span>
+                          </div>
+                          <div class="carousel-item">
+                              Do you feel that you are able to easily launch Web & Mobile projects easily?<span id="13"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Do you have a merchandising eCommerce? <span id="14"></span>
+                          </div>
+                        </div>
+                        <a href="#slider4" style="text-decoration: none;" data-slide="prev">
+                          <span class="carousel-control-prev-iconn"></span>
+                        </a>
+                        <a href="#slider4" style="text-decoration: none; float: right" data-slide="next">
+                          <span class="carousel-control-next-iconn"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="text-center">
+                      <a href="#collapse5" data-parent="#accordion" data-toggle="collapse">
+                        Data Management <i class="fas fa-caret-down"></i>
+                      </a>
+                    </h5>
+                  </div>
+
+                  <div id="collapse5" class="collapse">
+                    <div class="card-body">
+                      <div id="slider5" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                           Do you collect personal data from your digital touch points? (Emails from Website, profiles from Facebook, Single Sign-On...) <span id="15"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Do you collect demographic (age, gender, income, etc.) and/or psychographic (personal values, attitudes, interests, personality traits, etc.) data on consumers? <span id="16"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Do you have more than one consumer database that could contain the same information (i.e.: siloed data)? <span id="17"></span>
+                          </div>
+                          <div class="carousel-item">
+                              Do you have a centralized CRM system that is used by the entire organization? CRM cross-checks information with all sources (e.g.: web, ticketing, loyalty programs, newsletters subscriptions etc..? <span id="18"></span>
+                          </div>
+                          <div class="carousel-item">
+                              What CRM system do you use? CRM cross-checks information with all sources (e.g.: web, ticketing, loyalty programs, newsletters subscriptions etc.. <span id="19"></span>
+                          </div>
+                          <div class="carousel-item">
+                               Do you input your data manually or automatically into your CRM? <span id="20"></span>
+                          </div>
+                          <div class="carousel-item">
+                                Do you exploit (ticket/web/mobile app/email) consumer data to consumer fans? (i.e: Segmenting Newsletter based on demographics or behavior) <span id="21"></span>
+                          </div>
+                          <div class="carousel-item">
+                                Do you analyse the Consumer Data collected manually? Do you have a dashboard or do you excel to analyse? <span id="22"></span>
+                          </div>
+                        </div>
+                        <a href="#slider5" style="text-decoration: none;" data-slide="prev">
+                          <span class="carousel-control-prev-iconn"></span>
+                        </a>
+                        <a href="#slider5" style="text-decoration: none; float: right" data-slide="next">
+                          <span class="carousel-control-next-iconn"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h5 class="text-center">
+                      <a href="#collapse6" data-parent="#accordion" data-toggle="collapse">
+                        Content Production <i class="fas fa-caret-down"></i>
+                      </a>
+                    </h5>
+                  </div>
+
+                  <div id="collapse6" class="collapse">
+                    <div class="card-body">
+                      <div id="slider6" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                             Does the Organisation have a formal (written) digital content strategy? <span id="23"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Does the Organisation have a clear social media strategy? <span id="24"></span>
+                          </div>
+                          <div class="carousel-item">
+                             Does the Organisation have a written digital monetization strategy? <span id="25"></span>
+                          </div>
+                        </div>
+                        <a href="#slider6" style="text-decoration: none;" data-slide="prev">
+                          <span class="carousel-control-prev-iconn"></span>
+                        </a>
+                        <a href="#slider6" style="text-decoration: none; float: right" data-slide="next">
+                          <span class="carousel-control-next-iconn"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Content Row -->
+          <div class="row">
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/js/sb-admin-2.min.js"></script>
+
+  <!-- Page level plugins -->
+  <script src="/vendor/chart.js/Chart.min.js"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="/js/radarAdmin.js"></script>
+  <script src="/js/gaugeAdmin.js"></script>
+<script src="/js/clientresults.js"></script>
+<script>
+  $('.carousel').carousel({
+      interval: 0,
+      keyboard: true,
+      pause: 'hover',
+      wrap: true
+    });
+</script>
+</body>
+
+</html>

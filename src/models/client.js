@@ -30,7 +30,8 @@ const table1 = new mongoose.Schema({ // define
         type: Boolean,
         required: true
     },
-    results:[]
+    results:[],
+    questions:[]
 },{
     timestamps: true
 });

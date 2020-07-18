@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $("#otherSec").hide();
+    var scores = [];
     var current_fs, next_fs, previous_fs; //fieldsets
     var opacity;
     var current = 1;
@@ -75,7 +76,7 @@ $(document).ready(function(){
     });
     $("#next5").click(function(){
         $("#errors").html("");
-        let scores = [];
+        //let scores = [];
         let errors = [];
         let c1 = 0;
         let c2 = 0;
@@ -262,13 +263,14 @@ $(document).ready(function(){
                     body: JSON.stringify(obj1)
                 }).then((response)=>{
                         response.json().then((data)=>{
-                        if(data.success){
+                            console.log("reply1");
                             localStorage.setItem('email', email);
                             localStorage.setItem('name', name);
                             //document.getElementById('ques').click();
                             let obj2 = {
                                 ...obj,
-                                email: email
+                                email: email,
+                                questions: scores
                             }
                             console.log(obj2);
                             fetch('/results',{
@@ -279,16 +281,24 @@ $(document).ready(function(){
                                 },
                                 body: JSON.stringify(obj2)
                             }).then((response)=>{
+                                console.log("reply2");
                                 response.json().then((data)=>{
                                     console.log(data);
                                     document.getElementById('dashb').click();
                                 })
                             });
-                        }else{
-                            //fail
-                        }
                     })
                 });
+                if(agree==true){
+                    fetch('/crm',{
+                        method: 'POST',
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(obj1)
+                    })
+                }
             }else{
                 console.log("2")
                 //invalid email
