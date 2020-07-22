@@ -5,11 +5,12 @@ setTimeout(function(){
   
   // Pie Chart Example
   var ctx = document.getElementById("myPieChart");
-  let bs = localStorage.getItem('bs');
-  let id = localStorage.getItem('id');
-  let dp = localStorage.getItem('dp');
-  let dm = localStorage.getItem('dm');
-  let cp = localStorage.getItem('cp');
+  let bs = localStorage.getItem('Abs');
+  console.log(bs);
+  let id = localStorage.getItem('Aid');
+  let dp = localStorage.getItem('Adp');
+  let dm = localStorage.getItem('Adm');
+  let cp = localStorage.getItem('Acp');
   var myPieChart = new Chart(ctx, {
     type: 'radar',
     data: {

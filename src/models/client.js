@@ -31,7 +31,11 @@ const table1 = new mongoose.Schema({ // define
         required: true
     },
     results:[],
-    questions:[]
+    questions:[],
+    pdfCount:{
+        type: Number,
+        default: 0
+    }
 },{
     timestamps: true
 });

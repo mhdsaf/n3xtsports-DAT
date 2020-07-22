@@ -34,7 +34,8 @@ router.patch('/results', async(req,res)=>{
         Data_Management: req.body.DM,
         Content_Production: req.body.CP,
         Total: req.body.BS + req.body.ID + req.body.DP + req.body.DM + req.body.CP,
-        SubmittedAt: req.body.time
+        SubmittedAt: req.body.time,
+        checked: false
     };
     const obj1 = {
         test: req.body.questions
@@ -87,6 +88,7 @@ router.post('/adminProfile', async(req,res)=>{
             questions: results.questions[n]
         });
     } catch (error) {
+        console.log(error);
         res.status(400).send({error: "Email doesn't exist"});
     }
 });
@@ -105,6 +107,16 @@ router.get('/results', async(req,res)=>{
     const num = req.params.num;
     res.render('clientResults');
 });
+router.patch('/pdf', async(req,res)=>{
+    console.log(req.body.email);
+    const Prom1 = await clients.findOne({email: req.body.email});
+    Prom1.pdfCount = Prom1.pdfCount + 1;
+    await Prom1.save();
+});
+router.post('/getCount', async(req,res)=>{
+    const Prom1 = await clients.findOne({email: req.body.email});
+    res.status(200).send({numb:Prom1.pdfCount});
+})
 router.post('/crm', async(req,res)=>{
     const email = req.body.email;
     axios({
@@ -124,9 +136,9 @@ router.post('/crm', async(req,res)=>{
         },
         headers: {
             'Content-Type': 'application/json',
-            'X-PW-AccessToken': 'e16c510535b416afeb202a43ab2bb81a',
+            'X-PW-AccessToken': 'd1feb764232104d575948c12943307b5',
             'X-PW-Application': 'developer_api',
-            'X-PW-UserEmail': 'safieddinemhd@gmail.com'
+            'X-PW-UserEmail': 'mgs35@mail.aub.edu '
         }
       }).then(response=>{
           //res.send(response.data)
@@ -140,9 +152,9 @@ router.post('/crm', async(req,res)=>{
             },
             headers: {
                 'Content-Type': 'application/json',
-                'X-PW-AccessToken': 'e16c510535b416afeb202a43ab2bb81a',
+                'X-PW-AccessToken': 'd1feb764232104d575948c12943307b5',
                 'X-PW-Application': 'developer_api',
-                'X-PW-UserEmail': 'safieddinemhd@gmail.com'
+                'X-PW-UserEmail': 'mgs35@mail.aub.edu'
             }
           }).then(response=>{
               let id = response.data.id;
@@ -164,9 +176,9 @@ router.post('/crm', async(req,res)=>{
                     data: {"tags": arr},
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-PW-AccessToken': 'e16c510535b416afeb202a43ab2bb81a',
+                        'X-PW-AccessToken': 'd1feb764232104d575948c12943307b5',
                         'X-PW-Application': 'developer_api',
-                        'X-PW-UserEmail': 'safieddinemhd@gmail.com'
+                        'X-PW-UserEmail': 'mgs35@mail.aub.edu'
                     }
                   }).then(response=>{
                       console.log("OKAY");

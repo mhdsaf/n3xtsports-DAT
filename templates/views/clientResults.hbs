@@ -14,12 +14,15 @@
   <!-- Custom fonts for this template-->
   <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  
   <!-- Custom styles for this template-->
   <link href="/css/sb-admin-2.min.css" rel="stylesheet">
     <script src="/js/setup.js"></script>
 </head>
 <style>
+  .numb:hover{
+    cursor: pointer;
+  }
   .carousel-control-next-iconn:after
 {
   content: '>';
@@ -31,6 +34,186 @@
   content: '<';
   font-size: 30px;
   color: #4e73df;
+}
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .88rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: left;
+    background-color: #fff;
+}
+.bg-warm-flame {
+    background-image: linear-gradient(45deg,  #ff9a9e 0%,  #fad0c4 99%,  #fad0c4 100%) !important;
+}
+.bg-night-fade {
+    background-image: linear-gradient(to top,  #a18cd1 0%,  #fbc2eb 100%) !important;
+}
+.bg-sunny-morning {
+    background-image: linear-gradient(120deg,  #f6d365 0%,  #fda085 100%) !important;
+}
+.bg-tempting-azure {
+    background-image: linear-gradient(120deg,  #84fab0 0%,  #8fd3f4 100%) !important;
+}
+.bg-amy-crisp {
+    background-image: linear-gradient(120deg,  #a6c0fe 0%,  #f68084 100%) !important;
+}
+.bg-heavy-rain {
+    background-image: linear-gradient(to top,  #cfd9df 0%,  #e2ebf0 100%) !important;
+}
+.bg-mean-fruit {
+    background-image: linear-gradient(120deg,  #fccb90 0%,  #d57eeb 100%) !important;
+}
+.bg-malibu-beach {
+    background-image: linear-gradient(to right,  #4e73df 0%,  #00f2fe 180%) !important;
+}
+.bg-deep-blue {
+    background-image: linear-gradient(120deg,  #e0c3fc 0%,  #8ec5fc 100%) !important;
+}
+.bg-ripe-malin {
+    background-image: linear-gradient(120deg,  #f093fb 0%,  #f5576c 100%) !important;
+}
+.bg-arielle-smile {
+    background-image: radial-gradient(circle 248px at center,  #16d9e3 0%,  #30c7ec 47%,  #46aef7 100%) !important;
+}
+.bg-plum-plate {
+    background-image: linear-gradient(135deg,  #667eea 0%,  #764ba2 100%) !important;
+}
+.bg-happy-fisher {
+    background-image: linear-gradient(120deg,  #89f7fe 0%,  #66a6ff 100%) !important;
+}
+.bg-happy-itmeo {
+    background-image: linear-gradient(180deg,  #2af598 0%,  #009efd 100%) !important;
+}
+.bg-mixed-hopes {
+    background-image: linear-gradient(to top,  #c471f5 0%,  #fa71cd 100%) !important;
+}
+.bg-strong-bliss {
+    background-image: linear-gradient(to right,  #f78ca0 0%,  #f9748f 19%,  #fd868c 60%,  #fe9a8b 100%) !important;
+}
+.bg-grow-early {
+    background-image: linear-gradient(to top,  #0ba360 0%,  #3cba92 100%) !important;
+}
+.bg-love-kiss {
+    background-image: linear-gradient(to top,  #ff0844 0%,  #ffb199 100%) !important;
+}
+.bg-premium-dark {
+    background-image: linear-gradient(to right,  #434343 0%,  black 100%) !important;
+}
+.bg-happy-green {
+    background-image: linear-gradient(to bottom,  #00b09b,  #96c93d) !important;
+}
+.bg-vicious-stance {
+    background-image: linear-gradient(60deg,  #29323c 0%,  #485563 100%) !important;
+}
+.bg-midnight-bloom {
+    background-image: linear-gradient(to bottom, #4e73df 90%, rgb(241, 101, 115) ) !important;
+}
+.bg-night-sky {
+    background-image: linear-gradient(to top,  #1e3c72 0%,  #1e3c72 1%,  #2a5298 100%) !important;
+}
+.bg-slick-carbon {
+    background-image: linear-gradient(to bottom,  #323232 0%,  #3F3F3F 40%,  #1C1C1C 150%), linear-gradient(to top,  rgba(255, 255, 255, 0.4) 0%,  rgba(0, 0, 0, 0.25) 200%) !important;
+    background-blend-mode: multiply;
+}
+.bg-royal {
+    background-image: linear-gradient(to right,  #141e30,  #243b55) !important;
+}
+
+.animated.infinite {
+    animation-iteration-count: infinite;
+}
+.animated.hinge {
+    -webkit-animation-duration: calc( 1s * 2);
+    animation-duration: calc( 1s * 2);
+}
+.animated.bounceIn, .animated.bounceOut {
+    -webkit-animation-duration: calc( 1s * 0.75);
+    animation-duration: calc( 1s * 0.75);
+}
+.animated.flipOutX, .animated.flipOutY {
+    -webkit-animation-duration: calc( 1s * 0.75);
+    animation-duration: calc( 1s * 0.75);
+}
+@-webkit-keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+}
+40% {
+    -webkit-transform: translateY(-30px);
+}
+60% {
+    -webkit-transform: translateY(-15px);
+}
+}.widget-content {
+    padding: 1rem;
+    flex-direction: row;
+    align-items: center;
+}
+.widget-content .widget-content-wrapper {
+    display: flex;
+    flex: 1;
+    position: relative;
+    align-items: center;
+}
+.widget-content .widget-content-left .widget-heading {
+    opacity: .8;
+    font-weight: bold;
+}
+.widget-content .widget-content-left .widget-subheading {
+    opacity: .5;
+}
+.widget-content .widget-content-right {
+    margin-left: auto;
+}
+.widget-content .widget-numbers {
+    font-weight: bold;
+    font-size: 1.8rem;
+    display: block;
+}
+.widget-content .widget-content-outer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+.widget-content .widget-progress-wrapper {
+    margin-top: 1rem;
+}
+.widget-content .widget-progress-wrapper .progress-sub-label {
+    margin-top: .33333rem;
+    opacity: .5;
+    display: flex;
+    align-content: center;
+    align-items: center;
+}
+.widget-content .widget-progress-wrapper .progress-sub-label .sub-label-right {
+    margin-left: auto;
+}
+.widget-content .widget-content-right.widget-content-actions {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s;
+}
+.widget-content:hover .widget-content-right.widget-content-actions {
+    visibility: visible;
+    opacity: 1;
+}
+.ui-widget .fc-disabled-day {
+    background-image: none;
+}
+.ui-widget .fc-event {
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+}
+.widget-content .widget-numbers {
+    font-size: 1.6rem;
+    line-height: 1;
 }
 </style>
 <body id="page-top">
@@ -104,7 +287,7 @@
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
         <h1 class="display-4 text-center">
-            Client Results
+            Client Report
         </h1>
       <!-- Main Content -->
       <div id="content">
@@ -114,81 +297,60 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
-
-          
-
-          <!-- Content Row -->
-          <div class="row mt-2">
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Name</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientName"></div>
+          <div class="row mt-4">
+            <div class="col-xl-3 col-md-6 col-sm-12">
+                <div class="card mb-3 widget-content bg-malibu-beach">
+                    <div class="widget-content-wrapper text-white">
+                        <div class="widget-content-left">
+                            <div class="widget-heading">Name</div>
+                            <div style="font-family: Nunito;" id="ClientName"></div>
+                        </div>
+                        <div class="widget-content-right">
+                            <div class="widget-numbers text-white"><span><i class="fas fa-user text-gray-300"></i></span></div>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-user fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Company</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientCompany"></div>
+            <div class="col-xl-3 col-md-6 col-sm-12">
+                <div class="card mb-3 widget-content bg-malibu-beach">
+                    <div class="widget-content-wrapper text-white">
+                        <div class="widget-content-left">
+                            <div class="widget-heading">Company</div>
+                            <div style="font-family: Nunito;" id="ClientCompany"></div>
+                        </div>
+                        <div class="widget-content-right">
+                            <div class="widget-numbers text-white"><span><i class="fas fa-building text-gray-300"></i></span></div>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-building fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-
-            <!-- Earnings (Monthly) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Title</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientTitle"></div>
+            <div class="col-xl-3 col-md-6 col-sm-12">
+                <div class="card mb-3 widget-content bg-malibu-beach">
+                    <div class="widget-content-wrapper text-white">
+                        <div class="widget-content-left">
+                            <div class="widget-heading">Title</div>
+                            <div style="font-family: Nunito;" id="ClientTitle"></div>
+                        </div>
+                        <div class="widget-content-right">
+                            <div class="widget-numbers text-white"><span><i class="fas fa-briefcase text-gray-300"></i></span></div>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-briefcase fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-
-            <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Submission</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="ClientDate"></div>
+            <div class="col-xl-3 col-md-6 col-sm-12">
+                <div class="card mb-3 widget-content bg-malibu-beach">
+                    <div class="widget-content-wrapper text-white">
+                        <div class="widget-content-left">
+                            <div class="widget-heading">Submission Date</div>
+                            <div style="font-family: Nunito;" id="ClientDate"></div>
+                        </div>
+                        <div class="widget-content-right">
+                            <div class="widget-numbers text-white"><span><i class="fas fa-calendar text-gray-300"></i></span></div>
+                        </div>
                     </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
                 </div>
-              </div>
             </div>
-          </div>
-
+          </div> 
           <!-- Content Row -->
 
           <div class="row">
@@ -199,6 +361,7 @@
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Score</h6>
+                  <span class="float-right numb" style="font-size: 25px" data-toggle="tooltip" data-placement="top" title="PDF downloads" id="numb">&#9312</span>
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -221,7 +384,7 @@
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <div class="chart-pie pt-4 pb-2 mb-3">
+                  <div class="chart-pie pt-4 pb-2" style="margin-bottom: 40px;">
                     <canvas id="myPieChart"></canvas>
                   </div>
                   <br>
@@ -235,12 +398,12 @@
                 <div class="card">
                   <div class="card-header">
                     <h5 class="text-center">
-                      <a href="#collapse2" data-parent="#accordion" data-toggle="collapse">
-                        Business Strategy <i class="fas fa-caret-down"></i>
+                      <a href="#collapse2" class="col1" name="icon1" data-parent="#accordion" data-toggle="collapse">
+                        Business Strategy <span id="icon1" value="1"><i class="fas fa-caret-down"></i></span>
                       </a>
                     </h5>
                   </div>
-                  <div id="collapse2" class="collapse">
+                  <div id="collapse2" class="collapse show">
                     <div class="card-body">
                       <div id="slider2" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
@@ -268,8 +431,8 @@
                 <div class="card">
                   <div class="card-header">
                     <h5 class="text-center">
-                      <a href="#collapse3" data-parent="#accordion" data-toggle="collapse">
-                        Internal Digitalization <i class="fas fa-caret-down"></i>
+                      <a href="#collapse3" class="col1" name="icon2" data-parent="#accordion" data-toggle="collapse">
+                        Internal Digitalization <span id="icon2" value="0"><i class="fas fa-caret-right"></i></span>
                       </a>
                     </h5>
                   </div>
@@ -305,8 +468,8 @@
                 <div class="card">
                   <div class="card-header">
                     <h5 class="text-center">
-                      <a href="#collapse4" data-parent="#accordion" data-toggle="collapse">
-                        Digital Products <i class="fas fa-caret-down"></i>
+                      <a href="#collapse4" class="col1" name="icon3" data-parent="#accordion" data-toggle="collapse">
+                        Digital Products <span id="icon3" value="0"><i class="fas fa-caret-right"></i></span>
                       </a>
                     </h5>
                   </div>
@@ -350,8 +513,8 @@
                 <div class="card">
                   <div class="card-header">
                     <h5 class="text-center">
-                      <a href="#collapse5" data-parent="#accordion" data-toggle="collapse">
-                        Data Management <i class="fas fa-caret-down"></i>
+                      <a href="#collapse5" class="col1" name="icon4" data-parent="#accordion" data-toggle="collapse">
+                        Data Management <span id="icon4" value="0"><i class="fas fa-caret-right"></i></span>
                       </a>
                     </h5>
                   </div>
@@ -398,8 +561,8 @@
                 <div class="card">
                   <div class="card-header">
                     <h5 class="text-center">
-                      <a href="#collapse6" data-parent="#accordion" data-toggle="collapse">
-                        Content Production <i class="fas fa-caret-down"></i>
+                      <a href="#collapse6" class="col1" name="icon5" data-parent="#accordion" data-toggle="collapse">
+                        Content Production <span value="0" id="icon5" ><i class="fas fa-caret-right"></i></span>
                       </a>
                     </h5>
                   </div>
@@ -445,7 +608,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy; N3XT SPORTS 2020</span>
           </div>
         </div>
       </footer>
@@ -495,9 +658,9 @@
   <script src="/vendor/chart.js/Chart.min.js"></script>
 
   <!-- Page level custom scripts -->
+  <script src="/js/clientresults.js"></script>
   <script src="/js/radarAdmin.js"></script>
   <script src="/js/gaugeAdmin.js"></script>
-<script src="/js/clientresults.js"></script>
 <script>
   $('.carousel').carousel({
       interval: 0,
@@ -505,6 +668,7 @@
       pause: 'hover',
       wrap: true
     });
+    $('[data-toggle="tooltip"]').tooltip();
 </script>
 </body>
 
