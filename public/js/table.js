@@ -2,10 +2,11 @@ $(document).ready(function () {
     var clientData = "";
     var table = $('#dataTable').DataTable();
         fetch('/clients',{
-                method: 'GET',
+                method: 'POST',
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization' : localStorage.getItem('foo')
                 }
             }).then((response)=>{
                 response.json().then((data)=>{
@@ -36,7 +37,7 @@ $(document).ready(function () {
             let tempo = 0;
             if(n==1){
                 $(this).removeAttr('data-toggle');
-                document.getElementById('results').click();
+                $('#results').submit();
                 localStorage.setItem('clientEmail', email + ':' + tempo);
             }else{
                 clientData.forEach(element => {
@@ -53,6 +54,14 @@ $(document).ready(function () {
         $("#myModal").on('click','#sub',function(){
             localStorage.setItem('clientEmail', $(this).attr('name'));
             let arr = $(this).attr('name').split(':');
-            document.getElementById('results').click();
+            $('#results').submit();
+        });
+        $('#tablePage').click(function (e) { 
+            e.preventDefault();
+            $('#form1').submit();
+        });
+        $('#homePage').click(function (e) { 
+            e.preventDefault();
+            $('#form2').submit();
         });
 });

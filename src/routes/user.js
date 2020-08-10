@@ -2,7 +2,13 @@ const express = require('express');
 
 const clients = require('../models/client');
 
+const admin = require('../models/admin');
+
 const axios = require('axios');
+
+const authentication = require('../middleware/authentication');
+
+const bcrypt = require('bcryptjs');
 
 const router = new express.Router();
 
@@ -24,7 +30,7 @@ router.get('/dashboard', async(req,res)=>{
 });
 router.post('/dashboard/print', async(req,res)=>{
 })
-router.patch('/results', async(req,res)=>{
+router.patch('/results', authentication, async(req,res)=>{
     try {
     const user = await clients.findOne({email: req.body.email});
     const obj = {
@@ -35,7 +41,8 @@ router.patch('/results', async(req,res)=>{
         Content_Production: req.body.CP,
         Total: req.body.BS + req.body.ID + req.body.DP + req.body.DM + req.body.CP,
         SubmittedAt: req.body.time,
-        checked: false
+        checked: false,
+        pdfCount: 0
     };
     const obj1 = {
         test: req.body.questions
@@ -48,9 +55,8 @@ router.patch('/results', async(req,res)=>{
         console.log("wtf");
         console.log(error);
     }
-    
 });
-router.post('/userresults', async(req,res)=>{
+router.post('/userresults', authentication, async(req,res)=>{
     const email = req.body.email;
     try {
         const results = await clients.findOne({email:email});
@@ -60,7 +66,7 @@ router.post('/userresults', async(req,res)=>{
         res.status(400).send({error: "Email doesn't exist"});
     }
 });
-router.post('/profile', async(req,res)=>{
+router.post('/profile', authentication, async(req,res)=>{
     const email = req.body.email;
     try {
         const results = await clients.findOne({email:email});
@@ -74,7 +80,7 @@ router.post('/profile', async(req,res)=>{
         res.status(400).send({error: "Email doesn't exist"});
     }
 });
-router.post('/adminProfile', async(req,res)=>{
+router.post('/adminProfile', authentication, async(req,res)=>{
     const email = req.body.email;
     const n = req.body.index;
     try {
@@ -92,31 +98,50 @@ router.post('/adminProfile', async(req,res)=>{
         res.status(400).send({error: "Email doesn't exist"});
     }
 });
-router.get('/table', async (req, res)=>{
+router.post('/table', async (req, res)=>{
     res.render('table');
 });
 router.get('/admin', async (req, res)=>{
+    res.render('adminLogin');
+});
+router.post('/login', async (req,res)=>{
+    const user = await admin.find({});
+    const email  = req.body.email;
+    const pass = req.body.pass;
+    const matched = await bcrypt.compare(pass, user[0].password);
+    if(email==user[0].email && matched==true){
+        res.send({response: 'Success'});
+    }else{
+        res.send({response: 'Denied'});
+    }
+});
+router.post('/home', async (req, res)=>{
     res.render('admin');
 });
-router.get('/clients', async(req,res)=>{
+router.post('/clients', authentication, async(req,res)=>{ //this
     const Prom1 = await clients.find();
     res.status(200).send({data: Prom1});
 });
-router.get('/results', async(req,res)=>{
-    const email = req.params.email;
-    const num = req.params.num;
+router.post('/results', async(req,res)=>{ //this
     res.render('clientResults');
 });
-router.patch('/pdf', async(req,res)=>{
-    console.log(req.body.email);
+router.patch('/pdf', authentication, async(req,res)=>{
     const Prom1 = await clients.findOne({email: req.body.email});
-    Prom1.pdfCount = Prom1.pdfCount + 1;
+    let arr = [...Prom1.results];
+    const len = Prom1.results.length;
+    let p2 = Object.assign({}, Prom1.results[len-1]);
+    p2.pdfCount = p2.pdfCount + 1;
+    arr[len-1] = p2;
+    console.log(arr);
+    Prom1.results = arr;
     await Prom1.save();
 });
 router.post('/getCount', async(req,res)=>{
     const Prom1 = await clients.findOne({email: req.body.email});
-    res.status(200).send({numb:Prom1.pdfCount});
-})
+    const len = Prom1.results.length;
+    const count = Prom1.results[len-1].pdfCount;
+    res.status(200).send({numb:count});
+});
 router.post('/crm', async(req,res)=>{
     const email = req.body.email;
     axios({
@@ -161,7 +186,6 @@ router.post('/crm', async(req,res)=>{
               let arr = [];
               let bool = false;
               arr = [...response.data.tags]
-              //console.log("****************" + id + "   " + arr);
               arr.forEach(element => {
                   if(element=='digital assessment'){
                     bool = true;

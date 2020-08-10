@@ -18,7 +18,8 @@ $(document).ready(function () {
                 method: 'PATCH',
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization' : localStorage.getItem('foo')
                 },
                 body: JSON.stringify({email: localStorage.getItem('email')})
             });
@@ -64,7 +65,8 @@ $(document).ready(function () {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization' : localStorage.getItem('foo')
         },
         body: JSON.stringify(obj)
         }).then((response)=>{
@@ -79,7 +81,8 @@ $(document).ready(function () {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization' : localStorage.getItem('foo')
         },
         body: JSON.stringify(obj)
         }).then((response)=>{

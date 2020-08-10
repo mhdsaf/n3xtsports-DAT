@@ -9,7 +9,8 @@ $(document).ready(function () {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization' : localStorage.getItem('foo')
         },
         body: JSON.stringify({email: email, index: n})
     }).then((response)=>{
@@ -78,5 +79,13 @@ $(document).ready(function () {
             $(`#${name}`).html(`<i class="fas fa-caret-right"></i>`);
             $(`#${name}`).attr('value', '0');
         }
+    });
+    $('#tablePage').click(function (e) { 
+        e.preventDefault();
+        $('#form1').submit();
+    });
+    $('#homePage').click(function (e) { 
+        e.preventDefault();
+        $('#form2').submit();
     });
 });

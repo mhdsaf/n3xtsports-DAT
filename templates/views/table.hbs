@@ -48,8 +48,9 @@
       <hr class="sidebar-divider my-0">
 
       <!-- Nav Item - Dashboard -->
+      <form action="/home" method="post" id="form2"></form>
       <li class="nav-item">
-        <a class="nav-link" href="admin">
+        <a class="nav-link" href="#" id="homePage">
           <i class="fa fa-home"></i>
           <span>Home</span></a>
       </li>
@@ -80,8 +81,9 @@
       </li>
       
       <!-- Nav Item - Tables -->
+      <form action="/table" method="post" id="form1"></form>
       <li class="nav-item active">
-        <a class="nav-link" href="table">
+        <a class="nav-link" href='#' id="tablePage">
           <i class="fa fa-users"></i>
           <span>Clients</span></a>
       </li>
@@ -119,7 +121,7 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid mt-3">
-          <a href="/results" id='results' style="display: none;"></a>
+          <form action="/results" method="post" id="results"></form>
           <!-- Page Heading -->
           <h1 class="display-4 text-center text-dark">Clients</h1>
           <div id="mainT">

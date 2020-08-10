@@ -10,10 +10,11 @@ $(document).ready(function () {
     var leads = 0;
     var contact = 0;
     fetch('/clients',{
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization' : localStorage.getItem('foo')
         }
         }).then((response)=>{
         response.json().then((data)=>{
@@ -76,10 +77,11 @@ $(document).ready(function () {
         })
     });
     fetch('/clients',{
-        method: 'GET',
+        method: 'POST',
         headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Authorization' : localStorage.getItem('foo')
         },
         
         }).then((response)=>{
@@ -133,5 +135,12 @@ $(document).ready(function () {
           localStorage.setItem('scale',scale);
         })
     });
-     
+    $('#tablePage').click(function (e) { 
+      e.preventDefault();
+      $('#form1').submit();
+    });
+    $('#homePage').click(function (e) { 
+      e.preventDefault();
+      $('#form2').submit();
+    });
 });
