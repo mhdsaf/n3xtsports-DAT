@@ -153,32 +153,6 @@ body {
           <i class="fa fa-home"></i>
           <span>Home</span></a>
       </li>
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fa fa-list-ol"></i>
-          <span>Questionnaire</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Categories:</h6>
-            <a class="collapse-item" href="buttons.html">Business Strategy</a>
-            <a class="collapse-item" href="cards.html">Internal Digitalization</a>
-            <a class="collapse-item" href="cards.html">Digital Products</a>
-            <a class="collapse-item" href="cards.html">Data Management</a>
-            <a class="collapse-item" href="cards.html">Content Production</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="fa fa-trophy"></i>
-          <span>Leaderboards</span>
-        </a>
-      </li>
-      
       <!-- Nav Item - Tables -->
       <form action="/table" method="post" id="form1"></form>
       <li class="nav-item">
@@ -202,15 +176,10 @@ body {
 
       <!-- Main Content -->
       <div id="content">
-
-        
-        <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          <i class="fa fa-bars"></i>
+        </button>
         <div class="container-fluid">
-
-          
-
           <div class="row mt-4">
             <div class="col-xl-4 col-lg-4 col-md-4 offset-xl-1 offset-lg-1 offset-md-2">
                 <div class="card mb-3 widget-content bg-malibu-beach">
@@ -251,7 +220,7 @@ body {
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                  <div class="chart-area">
+                  <div class="chart-area w-100 h-100">
                     <canvas id="barChart"></canvas>
                   </div>
                 </div>

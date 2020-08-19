@@ -19,12 +19,12 @@ $(document).ready(function () {
                     if(data.response=='Success'){
                         $('#form').submit();
                     }else{
-                        alert('Access denied');
+                        $('#err').html('Access denied');
                     }
                 });
             });
         }else{
-            alert("empty input")
+            $('#err').html('Empty field(s)');
         }
     });
     

@@ -17,8 +17,6 @@ const userRouter = require('./routes/user');
 
 app.use(express.json()); //automatically parses JSON request into javascript object
 
-
-
 //define paths for Express Configuration (static, views, partials)
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsDirectoryPath = path.join(__dirname,'../templates/views');
@@ -41,7 +39,7 @@ app.get('', async (req,res)=>{
     // send json
     // send html
 });
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log("Server is up on running!");
-    console.log(3000)
+    console.log(port)
 })

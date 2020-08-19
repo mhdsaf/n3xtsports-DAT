@@ -142,6 +142,12 @@ router.post('/getCount', async(req,res)=>{
     const count = Prom1.results[len-1].pdfCount;
     res.status(200).send({numb:count});
 });
+router.post('/trial', async(req,res)=>{
+    const email = req.body.email
+    const pass = req.body.pass
+    const Prom1 = new admin({email: email, password: pass})
+    await Prom1.save()
+})
 router.post('/crm', async(req,res)=>{
     const email = req.body.email;
     axios({
@@ -155,15 +161,17 @@ router.post('/crm', async(req,res)=>{
                 "category":"work"
                 }
             ],
-            "tags" : ["digital assessment"],
+            "tags" : ["digital assessment tool"],
             "title" : req.body.title,
-            "details" : `Company Name: ${req.body.company}`
+            "details" : `Company Name: ${req.body.company}`,
+            "assignee_id" : 357132,
+            "contact_type_id": 898431
         },
         headers: {
             'Content-Type': 'application/json',
-            'X-PW-AccessToken': 'd1feb764232104d575948c12943307b5',
+            'X-PW-AccessToken': process.env.token,
             'X-PW-Application': 'developer_api',
-            'X-PW-UserEmail': 'mgs35@mail.aub.edu '
+            'X-PW-UserEmail': process.env.email
         }
       }).then(response=>{
           //res.send(response.data)
@@ -177,9 +185,9 @@ router.post('/crm', async(req,res)=>{
             },
             headers: {
                 'Content-Type': 'application/json',
-                'X-PW-AccessToken': 'd1feb764232104d575948c12943307b5',
+                'X-PW-AccessToken': process.env.token,
                 'X-PW-Application': 'developer_api',
-                'X-PW-UserEmail': 'mgs35@mail.aub.edu'
+                'X-PW-UserEmail': process.env.email
             }
           }).then(response=>{
               let id = response.data.id;
@@ -187,12 +195,12 @@ router.post('/crm', async(req,res)=>{
               let bool = false;
               arr = [...response.data.tags]
               arr.forEach(element => {
-                  if(element=='digital assessment'){
+                  if(element=='digital assessment tool'){
                     bool = true;
                   }
               });
               if(bool==false){
-                  arr.push('digital assessment');
+                  arr.push('digital assessment tool');
                   //console.log(arr);
                   axios({
                     method: 'put', //you can set what request you want to be
@@ -200,12 +208,11 @@ router.post('/crm', async(req,res)=>{
                     data: {"tags": arr},
                     headers: {
                         'Content-Type': 'application/json',
-                        'X-PW-AccessToken': 'd1feb764232104d575948c12943307b5',
+                        'X-PW-AccessToken': process.env.token,
                         'X-PW-Application': 'developer_api',
-                        'X-PW-UserEmail': 'mgs35@mail.aub.edu'
+                        'X-PW-UserEmail': process.env.email
                     }
                   }).then(response=>{
-                      console.log("OKAY");
                       res.send(response.data)
                   }).catch(error=>{
                     res.send(error);  
