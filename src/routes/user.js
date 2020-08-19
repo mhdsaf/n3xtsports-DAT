@@ -142,13 +142,6 @@ router.post('/getCount', async(req,res)=>{
     const count = Prom1.results[len-1].pdfCount;
     res.status(200).send({numb:count});
 });
-router.post('/trial', async(req,res)=>{
-    const email = req.body.email
-    const pass = req.body.pass
-    const hash = await bcrypt.hash(pass, 8)
-    const Prom1 = new admin({email: email, password: hash})
-    await Prom1.save()
-})
 router.post('/crm', async(req,res)=>{
     const email = req.body.email;
     axios({
