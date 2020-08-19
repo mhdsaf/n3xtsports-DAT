@@ -171,7 +171,7 @@ $(document).ready(function(){
         }
         console.log(errors);
         console.log(scores);
-        //if(errors.length==0 && scores.length==25){
+        if(errors.length==0 && scores.length==25){
             // all answers are valid
             console.log("confirm0");
             let date = new Date();
@@ -206,14 +206,14 @@ $(document).ready(function(){
         console.log(obj);
         localStorage.setItem('testResults', obj);
         document.getElementById('go').click();
-        //}else{
+        }else{
             let index = 0;
             while(index<errors.length){
                 console.log("as");
                 $("#errors").append(`<div class="alert alert-danger">Missing question(s) in ${errors[index]}</div>`)
                 index++;
             }
-        //}
+        }
     });
     localStorage.setItem('foo', 'Wya_%WfAy9(z$usN')
     $("#submitUser").click(function (e) {
