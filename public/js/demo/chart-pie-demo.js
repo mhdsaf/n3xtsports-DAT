@@ -17,7 +17,7 @@ var myPieChart = new Chart(ctx, {
     ["Internal Digitalization", `${id}/16`],
     ["Digital Products", `${dp}/28`],
     ["Data Management", `${dm}/32`]
-    ,["Content_Production", `${cp}/12`]],
+    ,["Content Production", `${cp}/12`]],
     datasets: [{
       data: [Math.ceil((bs/12)*100),Math.ceil((id/16)*100),Math.ceil((dp/28)*100),Math.ceil((dm/32)*100), Math.ceil((cp/12)*100)],
       backgroundColor: 'rgba(43, 36, 183, 0.52)',
