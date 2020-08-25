@@ -27,6 +27,7 @@ body, html {
 	font-weight: 600;
     font-size: 15px;
     border-color: #1e2d70;
+    outline: none!important;
 }
 .hehe:hover{
     background-color: #3699d5;
